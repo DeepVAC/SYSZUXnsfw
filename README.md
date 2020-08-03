@@ -40,7 +40,7 @@ git lfs pull
 
 ## 如何计算分数
 
-测试集上的分数可以通过deepvac项目lib库的syszux_report模块（NsfwReport类，来自https://github.com/DeepVAC/deepvac/blob/master/lib/syszux_report.py ）给出。NsfwReport类会给三分类的混淆矩阵和评估指标。
+测试集上的分数可以通过deepvac项目lib库的syszux_report模块（ClassifierReport类，来自https://github.com/DeepVAC/deepvac/blob/master/lib/syszux_report.py ）给出。ClassifierReport类会给三分类的混淆矩阵和评估指标。
 
 #### 混淆矩阵
 
@@ -68,11 +68,31 @@ git lfs pull
 每一类的F1-Score：F1-score = 2TP/(2TP+FP+FN)；     
 准确率accuracy和精确率precision都高的情况下，F1 score也会显得很高；          
 
-#### 使用NsfwReport模块来进行以上分数的计算
+#### 使用ClassifierReport模块来进行以上分数的计算
 ```python
-#use the NsfwReport class
+#use the ClassifierReport class
+report = ClassifierReport('gemfield',5, 3)
+report.add(1, 2).add(1, 1).add(0, 0).add(0, 2).add(2, 2)
+report()
 ```
 程序会输出markdown格式的报告：
+- dataset: gemfield
+- duration: 0.000
+- accuracy: 0.600
+
+- CONFUSION-MATRIX
+| gemfield | cls0 | cls1 | cls2 
+|---|---|---|---
+| cls0 | 1 | 0 | 1 
+| cls1 | 0 | 1 | 1 
+| cls2 | 0 | 0 | 1 
+
+- TEST NSFW REPORT
+| gemfield | cls0 | cls1 | cls2 
+|---|---|---|---
+| precision | 1.000 | 1.000 | 0.333 
+| recall | 0.500 | 0.500 | 1.000 
+| f1-score | 0.667 | 0.667 | 0.500 
 
 ## 使用许可
 本项目仅限用于纯粹的学术研究，如：
