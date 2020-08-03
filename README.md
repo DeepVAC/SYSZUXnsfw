@@ -81,6 +81,7 @@ report()
 - accuracy: 0.600
 
 - CONFUSION-MATRIX
+
 | gemfield | cls0 | cls1 | cls2 
 |---|---|---|---
 | cls0 | 1 | 0 | 1 
@@ -88,6 +89,7 @@ report()
 | cls2 | 0 | 0 | 1 
 
 - TEST NSFW REPORT
+
 | gemfield | cls0 | cls1 | cls2 
 |---|---|---|---
 | precision | 1.000 | 1.000 | 0.333 
