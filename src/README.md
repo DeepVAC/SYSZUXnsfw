@@ -31,18 +31,18 @@ python3 test.py
 - ACCURACY: 0.905
 - CONFUSION-MATRIX
 
-| gemfield | cls0 | cls1 | cls2 
-|---|---|---|---
-| cls0 | 289 | 3 | 16 
-| cls1 | 0 | 302 | 0 
-| cls2 | 1 | 67 | 235 
+    | gemfield | cls0 | cls1 | cls2 
+    |---|---|---|---
+    | cls0 | 289 | 3 | 16 
+    | cls1 | 0 | 302 | 0 
+    | cls2 | 1 | 67 | 235 
 
 - TEST NSFW REPORT
 
-| gemfield | cls0 | cls1 | cls2 
-|---|---|---|---
-| precision | 0.997 | 0.812 | 0.936 
-| recall | 0.938 | 1.000 | 0.776 
-| f1-score | 0.967 | 0.896 | 0.848
+    | gemfield | cls0 | cls1 | cls2 
+    |---|---|---|---
+    | precision | 0.997 | 0.812 | 0.936 
+    | recall | 0.938 | 1.000 | 0.776 
+    | f1-score | 0.967 | 0.896 | 0.848
 
 - cls0: normal  cls1: porn  cls2: sexy
